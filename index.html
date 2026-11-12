@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GVO Sound growth plan</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0e0f;--panel:#17171a;--deep:#0b0b0c;--line:#2a2a2f;--text:#f2efe8;--muted:#a19d95;--accent:#e8b04b;--good:#6fcf8f;--bad:#ef7b6b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:var(--accent)}
+nav{position:sticky;top:0;z-index:5;background:rgba(14,14,15,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav a{display:inline-block;padding:14px 11px;color:var(--muted);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--text)}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+header{padding:64px 0 36px}
+.eyebrow{color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+h1{font:800 clamp(38px,7vw,64px)/1.02 Archivo,sans-serif;margin:14px 0 16px}
+.slogan{font:800 clamp(20px,3.2vw,26px)/1.25 Archivo,sans-serif;color:var(--accent);margin:0 0 18px}
+.lede{color:var(--muted);max-width:620px;margin:0}
+section{padding:52px 0;border-top:1px solid var(--line)}
+.num-label{color:var(--accent);font:800 14px Archivo,sans-serif;letter-spacing:.1em}
+h2{font:800 clamp(26px,4vw,34px)/1.1 Archivo,sans-serif;margin:6px 0 10px}
+h3{font:600 18px/1.3 Archivo,sans-serif;margin:26px 0 8px}
+p{margin:0 0 14px}
+.takeaway{font-size:18px;margin-bottom:18px}
+.muted{color:var(--muted)}.small{font-size:14px}
+.note{border-left:3px solid var(--accent);padding:10px 14px;background:var(--panel);margin:18px 0;font-size:15px;color:var(--muted)}
+.short{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:28px}
+.short ol{margin:0;padding-left:20px}.short li{margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.07em}
+td.num,th.num{text-align:right;white-space:nowrap}
+.tablewrap{overflow-x:auto}
+.calc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type=number]{width:100%;background:var(--deep);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:10px 12px;font:500 16px Inter,sans-serif}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.stat{background:var(--deep);border:1px solid var(--line);border-radius:10px;padding:14px}
+.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.stat .v{font:800 25px/1.2 Archivo,sans-serif;margin-top:4px}
+.v.good{color:var(--good)}.v.bad{color:var(--bad)}.v.acc{color:var(--accent)}
+.verdict{margin:16px 0 0;font-size:15px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+button{background:var(--deep);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:500 14px Inter,sans-serif;cursor:pointer}
+button.on,button:hover{border-color:var(--accent);color:var(--accent)}
+button.primary{background:var(--accent);color:#111;border-color:var(--accent);font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{margin-top:0}
+.tag{display:inline-block;font-size:12px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+ol,ul{padding-left:22px;margin:8px 0 14px}
+li{margin-bottom:8px}
+.bar{height:12px;background:var(--deep);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.decide{margin-top:26px;border:1px dashed var(--accent);border-radius:14px;padding:18px 20px;background:rgba(232,176,75,.05)}
+.decide .k{color:var(--accent);font:800 13px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.decide ul{margin:0 0 12px}
+textarea{width:100%;min-height:90px;resize:vertical;background:var(--deep);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:10px 12px;font:15px/1.5 Inter,sans-serif}
+.saved{font-size:12px;color:var(--muted);margin-top:6px}
+.timeline{list-style:none;padding:0;margin:16px 0}
+.timeline li{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);margin:0}
+.timeline b{color:var(--accent);font:600 14px Archivo,sans-serif}
+@media(max-width:560px){.timeline li{grid-template-columns:1fr;gap:2px}}
+#allnotes{min-height:220px}
+footer{padding:44px 0 80px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a href="#short">Short version</a><a href="#goal">Goal</a><a href="#keep">Per booking</a><a href="#ads">Ads</a><a href="#layers">Revenue</a><a href="#month">Month builder</a><a href="#invest">Investment</a><a href="#roles">Who does what</a><a href="#live">Events</a><a href="#first90">First 90 days</a><a href="#rules">Ground rules</a><a href="#partner">Partnership</a><a href="#shipping">Shipping</a><a href="#next">Next steps</a><a href="#notes">Notes</a>
+</div></nav>
+
+<div class="wrap">
+<header id="short">
+<div class="eyebrow">GVO Sound · Working draft · Nov 12, 2026</div>
+<h1>GVO Sound growth plan</h1>
+<p class="slogan">Fill The Rooms. Prove The Spend. Build The System.</p>
+<p class="lede">A plan for Cory and Siani to walk through together. Prices come from gvosound.com. Numbers marked "working number" are placeholders until GVO's real figures go in. Every calculator updates as you type, and every section ends with a space to record what we decide.</p>
+<div class="short">
+<div class="num-label">THE SHORT VERSION</div>
+<ol>
+<li>The target is the monthly gap between what GVO earns now and its roughly $5,000 in costs.</li>
+<li>Every ad dollar has to come back as at least $1 of take-home. Anything that doesn't gets cut.</li>
+<li>Revenue comes in three layers: memberships and retainers for a steady floor, content projects for big tickets, and sessions, photo, events and apparel for volume.</li>
+<li>Start small: about $20 a day in ads for 90 days, then scale only what proved itself.</li>
+<li>First proof: R&amp;B &amp; Vibes on Nov 27 and the Valentine's cruise.</li>
+<li>GVO owns every account, contact and asset built for it.</li>
+</ol>
+</div>
+</header>
+
+<section id="goal">
+<div class="num-label">1</div>
+<h2>The goal</h2>
+<p class="takeaway">Cover about $5,000 in costs every month, so a slow month never puts the studio at risk.</p>
+<div class="calc">
+<div class="grid">
+<div><label>Monthly costs to cover ($)</label><input type="number" id="g_floor" value="5000"></div>
+<div><label>What GVO brings in on a typical month now ($)</label><input type="number" id="g_now" value="0"></div>
+</div>
+<div class="out">
+<div class="stat"><div class="k">Monthly gap</div><div class="v acc" id="g_gap">$5,000</div></div>
+<div class="stat"><div class="k">Equals 2-hr sessions</div><div class="v" id="g_sess">63</div></div>
+<div class="stat"><div class="k">Or photo room hours</div><div class="v" id="g_photo">100</div></div>
+</div>
+</div>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>What GVO brings in on a typical month, and how much slow and busy months swing</li><li>What the $5,000 covers: rent, utilities, software, gear, and whether Cory's own pay is in it</li><li>The real target: break even, or a set profit on top</li></ul>
+<textarea data-note="Goal" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="keep">
+<div class="num-label">2</div>
+<h2>What GVO keeps per booking</h2>
+<p class="takeaway">Revenue and take-home are different numbers. Plans and ad targets run on take-home.</p>
+<div class="tablewrap"><table>
+<tr><th>Service</th><th class="num">Client pays</th><th class="num">Team cost</th><th class="num">GVO keeps</th></tr>
+<tr><td>Recording, 2 hrs at $75/hr</td><td class="num">$150</td><td class="num">$70</td><td class="num">$80</td></tr>
+<tr><td>Recording, 6 hrs at $60/hr</td><td class="num">$360</td><td class="num">$210</td><td class="num">$150</td></tr>
+<tr><td>Photo room, 2 hrs at $50/hr</td><td class="num">$100</td><td class="num">$0</td><td class="num">$100</td></tr>
+<tr><td>Content: podcast, video, commercial</td><td class="num">Quoted</td><td class="num">Team rate</td><td class="num">To confirm</td></tr>
+<tr><td>Apparel: 27 pieces, $10–$100</td><td class="num">Varies</td><td class="num">Cost of goods</td><td class="num">To confirm</td></tr>
+<tr><td>Events</td><td class="num">Tickets</td><td class="num">Venue, DJ, promo</td><td class="num">To confirm</td></tr>
+<tr><td>Travel: cruise at $2,020/room</td><td class="num">Per room</td><td class="num">Trip costs</td><td class="num">To confirm</td></tr>
+</table></div>
+<ul>
+<li>Photo earns $50 an hour against recording's $40, so photo gets real ad attention.</li>
+<li>The 6-hour rate leaves $25 an hour, which gives away most of the margin on the longest sessions.</li>
+<li>If engineers are paid for mix time after the session, recording keeps less than $80.</li>
+<li>Travel stays out of the $5,000 math until the margin is known. It still sells apparel and event tickets.</li>
+</ul>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Are engineers paid for mix time beyond the session?</li><li>Review the 6-hour rate, and whether $75 an hour fits a 5.0-rated studio with 49 reviews</li><li>Offer a set price for photo room plus GVO photographer, so it can be advertised</li><li>Take-home on apparel, events and travel</li></ul>
+<textarea data-note="Per booking" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="ads">
+<div class="num-label">3</div>
+<h2>How ad spend works</h2>
+<p class="takeaway">Ads buy attention. What matters is how many dollars it takes to win one paying client, and whether that client is worth more than that.</p>
+<p>You set a daily budget on Instagram, Facebook or Google. The platform shows the ad to the people you target and charges as they see or tap it. Some of those people book. A client who books once is worth $80 to GVO. A client who books three times is worth $240. Repeat business is where ads pay off.</p>
+<div class="calc">
+<div class="grid">
+<div><label>Monthly ad budget ($)</label><input type="number" id="a_budget" value="600"></div>
+<div><label>Cost per click ($), working number</label><input type="number" id="a_cpc" value="1.50" step="0.1"></div>
+<div><label>Clicks that book (%), working number</label><input type="number" id="a_conv" value="2" step="0.5"></div>
+<div><label>GVO keeps per booking ($)</label><input type="number" id="a_keep" value="80"></div>
+<div><label>Bookings per new client, 6 months</label><input type="number" id="a_repeat" value="2" step="0.5"></div>
+</div>
+<div class="out">
+<div class="stat"><div class="k">Clicks</div><div class="v" id="a_clicks">0</div></div>
+<div class="stat"><div class="k">New clients</div><div class="v" id="a_clients">0</div></div>
+<div class="stat"><div class="k">Cost per client</div><div class="v" id="a_cpa">$0</div></div>
+<div class="stat"><div class="k">Kept, first visit</div><div class="v" id="a_first">$0</div></div>
+<div class="stat"><div class="k">Kept, with repeats</div><div class="v" id="a_total">$0</div></div>
+<div class="stat"><div class="k">Back per $1</div><div class="v" id="a_roi">$0</div></div>
+</div>
+<p class="verdict" id="a_verdict"></p>
+</div>
+<div class="note">Cost per click and booking rate are starting guesses. Month one replaces them with GVO's real numbers.</div>
+<h3>Where the dollars go</h3>
+<ul>
+<li>Google Search reaches people already looking, like "recording studio Annapolis." High intent, smaller volume.</li>
+<li>Instagram and Facebook build demand with session clips and event recaps, and retarget gvosound.com visitors who didn't book.</li>
+<li>Each ad points to its own page on gvosound.com with a tracked link, so every booking traces back to the ad that earned it.</li>
+</ul>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Starting monthly ad budget, and a 90-day test window before judging results</li><li>Which services to test first: photo, recording, cruise, events</li><li>Any past ad accounts or results</li><li>Who approves a budget increase</li></ul>
+<textarea data-note="Ads" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="layers">
+<div class="num-label">4</div>
+<h2>Three revenue layers</h2>
+<p class="takeaway">A steady month needs a floor that refills itself, a few big tickets, and volume to fill the gaps.</p>
+<div class="cards">
+<div class="card"><span class="tag">Recurring</span><h3>The floor</h3><p>Memberships for artists and podcasters who record often. Monthly content packages for local businesses. Money in before the month starts.</p></div>
+<div class="card"><span class="tag">High-ticket</span><h3>The upside</h3><p>Content production by quote: brand videos, product shoots, event coverage, podcast production. One project can equal 15–20 sessions.</p></div>
+<div class="card"><span class="tag">Volume</span><h3>The fill</h3><p>Recording, photo rentals, events and apparel, driven by ads, Google, print and the event crowd.</p></div>
+</div>
+<h3>Membership, working example</h3>
+<p>Deep hourly discounts don't work, because the engineer costs $35 an hour whatever the client pays. The value comes from perks that cost GVO little.</p>
+<div class="tablewrap"><table>
+<tr><th>Artist membership</th><th class="num">Monthly</th></tr>
+<tr><td>4 studio hours, off-peak, engineer and mix included</td><td class="num">$280</td></tr>
+<tr><td>Engineer cost, 4 hrs at $35</td><td class="num">−$140</td></tr>
+<tr><td>GVO keeps per member</td><td class="num">$140</td></tr>
+</table></div>
+<p>Perks: priority booking, a merch discount, early access to drops, members-only listening nights, and a feature on @gvo.sound. Fifteen members bring in about $2,100 a month before a single walk-in booking. Unused hours don't roll over, and members can't take every Friday night.</p>
+<h3>Content packages, working example</h3>
+<p>A portfolio page built from GVO's existing work, a quote form, and three clear starting points: a single shoot day, a monthly content package, and full podcast production. Sold mostly through referrals and direct outreach to local businesses, with ads in support.</p>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Membership: yes or no, price, hours, perks, and which hours count as off-peak</li><li>How many regulars book twice a month or more</li><li>Past content projects and prices, and three content packages to offer</li><li>Who answers content inquiries and sends quotes</li></ul>
+<textarea data-note="Revenue layers" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="month">
+<div class="num-label">5</div>
+<h2>Month builder</h2>
+<p class="takeaway">Put in a month's activity and see what GVO keeps against the floor. The presets are examples to start the conversation.</p>
+<div class="calc">
+<div class="btns"><button data-p="slow">Slow month</button><button data-p="steady" class="on">Steady month</button><button data-p="strong">Strong month</button></div>
+<div class="grid">
+<div><label>2-hr recording sessions</label><input type="number" id="m_sess" value="25"></div>
+<div><label>GVO keeps per session ($)</label><input type="number" id="m_sesskeep" value="80"></div>
+<div><label>Photo room hours</label><input type="number" id="m_photo" value="20"></div>
+<div><label>Members</label><input type="number" id="m_mem" value="8"></div>
+<div><label>GVO keeps per member ($)</label><input type="number" id="m_memkeep" value="140"></div>
+<div><label>Content projects</label><input type="number" id="m_cont" value="1"></div>
+<div><label>Kept per project ($), working number</label><input type="number" id="m_contkeep" value="600"></div>
+<div><label>Apparel take-home ($)</label><input type="number" id="m_app" value="500"></div>
+<div><label>Event take-home ($)</label><input type="number" id="m_evt" value="600"></div>
+<div><label>Ad spend ($)</label><input type="number" id="m_ads" value="600"></div>
+<div><label>Monthly costs to cover ($)</label><input type="number" id="m_floor" value="5000"></div>
+</div>
+<div class="out">
+<div class="stat"><div class="k">GVO keeps</div><div class="v" id="m_keep">$0</div></div>
+<div class="stat"><div class="k">After ad spend</div><div class="v" id="m_after">$0</div></div>
+<div class="stat"><div class="k">Against the floor</div><div class="v" id="m_vs">$0</div></div>
+</div>
+<div class="bar"><i id="m_bar"></i></div>
+<p class="small muted" style="margin-top:8px" id="m_pct"></p>
+</div>
+</section>
+
+<section id="invest">
+<div class="num-label">6</div>
+<h2>The all-in investment</h2>
+<p class="takeaway">Staged so each phase earns the next. Nothing scales until a test shows it pays back.</p>
+<div class="tablewrap"><table>
+<tr><th>Phase</th><th>What happens</th><th>Ads</th></tr>
+<tr><td><b>Build</b><br><span class="muted small">Dec–Feb</span></td><td>Tracking across Square, Eventbrite, Posh and the site. One contact list across studio, shop, events and travel. Memberships and content packages. Ad accounts and first tests.</td><td>About $20/day</td></tr>
+<tr><td><b>Prove</b><br><span class="muted small">Mar–May</span></td><td>Budget moves only to what returned at least $1 per $1. Sponsor outreach using winter footage. Outdoor season prep.</td><td>Grows with results</td></tr>
+<tr><td><b>Run</b><br><span class="muted small">Jun on</span></td><td>Weekly rhythm, monthly report, written playbooks so the team runs the daily parts.</td><td>Set by return</td></tr>
+</table></div>
+<div class="calc">
+<p class="small muted" style="margin-top:0">Fill in the partnership terms as we agree them. Ad spend is paid by GVO directly to Meta and Google.</p>
+<div class="grid">
+<div><label>Ads, months 1–3 ($/mo)</label><input type="number" id="i_ad1" value="600"></div>
+<div><label>Ads, months 4–6 ($/mo)</label><input type="number" id="i_ad2" value="1200"></div>
+<div><label>Build fee, months 1–3 ($/mo)</label><input type="number" id="i_build" value="0"></div>
+<div><label>Monthly base, months 4–6 ($/mo)</label><input type="number" id="i_base" value="0"></div>
+<div><label>Performance share of new take-home (%)</label><input type="number" id="i_perf" value="0"></div>
+<div><label>New monthly take-home by month 6 ($), working number</label><input type="number" id="i_new" value="2500"></div>
+</div>
+<div class="out">
+<div class="stat"><div class="k">Ads, 6 months</div><div class="v" id="i_adtot">$0</div></div>
+<div class="stat"><div class="k">Fees, 6 months</div><div class="v" id="i_feetot">$0</div></div>
+<div class="stat"><div class="k">All-in, 6 months</div><div class="v acc" id="i_all">$0</div></div>
+<div class="stat"><div class="k">Performance at month 6</div><div class="v" id="i_perfamt">$0</div></div>
+</div>
+<p class="small muted" style="margin-top:14px">The performance share applies only to take-home above today's baseline, so it grows only when GVO's earnings grow. Per-transaction fees from Square, Eventbrite, Posh and Twilio aren't included.</p>
+</div>
+<h3>Running costs to expect</h3>
+<div class="tablewrap"><table>
+<tr><th>Tool</th><th>Used for</th><th>Cost</th></tr>
+<tr><td>Meta and Google Ads</td><td>Paid ads</td><td>Only what we spend</td></tr>
+<tr><td>Square</td><td>Bookings, payments, shop, shipping labels</td><td>Already in place</td></tr>
+<tr><td>Eventbrite and Posh</td><td>Tickets and attendee lists</td><td>Per-ticket fees</td></tr>
+<tr><td>Twilio</td><td>Booking alerts and event texts</td><td>Per message</td></tr>
+<tr><td>Google Sheets</td><td>Contact list and form leads</td><td>Free</td></tr>
+<tr><td>gvosound.com on Cloudflare</td><td>Site and landing pages</td><td>Domain renewal</td></tr>
+</table></div>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Build fee, monthly base and performance share</li><li>How the performance share is measured, and when it's paid</li><li>Payment dates and method</li></ul>
+<textarea data-note="Investment" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="roles">
+<div class="num-label">7</div>
+<h2>Who does what</h2>
+<p class="takeaway">Cory and Ashley both work full time, so the system can't depend on either of them day to day.</p>
+<div class="tablewrap"><table>
+<tr><th>Who</th><th>Owns</th></tr>
+<tr><td>Siani</td><td>Building the system, running ads, tracking, the monthly report, the content calendar, and written playbooks</td></tr>
+<tr><td>Cory</td><td>Final say on spend and pricing, artist booking, events, venue relationships, and closing content deals</td></tr>
+<tr><td>Ashley</td><td>Account access, billing, and keeping logins current</td></tr>
+<tr><td>GVO team</td><td>Shooting and editing ad content and OTD sessions, engineering sessions, DJ Mo on event sound</td></tr>
+<tr><td>To name today</td><td>Answering DMs, calls and quote requests fast. A lead that waits a day usually books somewhere else.</td></tr>
+</table></div>
+<h3>Rhythm</h3>
+<ul><li>A 15-minute check-in once a week</li><li>A one-page report the first week of every month</li><li>A 90-day review to decide what scales, changes or stops</li></ul>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Who answers leads, and how fast</li><li>Check-in day and time</li><li>Which team members shoot and edit ad content, and their rates</li></ul>
+<textarea data-note="Who does what" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="live">
+<div class="num-label">8</div>
+<h2>Events and the live series</h2>
+<p class="takeaway">GVO already throws the nights. Each one can also capture contacts, sell sponsor slots, film content and move apparel.</p>
+<div class="cards">
+<div class="card"><span class="tag">GVO</span><h3>R&amp;B &amp; Vibes</h3><p>The DJ-led party franchise, built around the crowd. 12 nights since Aug 2025 across Annapolis, Glen Burnie and Baltimore.</p></div>
+<div class="card"><span class="tag">OTD Live x GVO Live</span><h3>The live series</h3><p>The artist-led showcase for rap and live bands, with Baltimore and DMV artists. Indoor this winter at venues Cory already works with, then backyard, rooftop and waterfront shows in summer.</p></div>
+<div class="card"><span class="tag">Tour</span><h3>Proof of concept</h3><p>Baltimore, DC, Annapolis, Philly and Virginia. Costs funded together. Whoever puts up the most money headlines.</p></div>
+</div>
+<h3>Every event, every time</h3>
+<ol><li>Tracked ticket links on Eventbrite and Posh</li><li>Every attendee's contact added to the shared list, with permission to text or email</li><li>One sponsor slot sold to a local brand</li><li>Photo and video capture for ads and OTD</li><li>GVO apparel on stage and at the merch table</li></ol>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Event calendar from December through spring</li><li>Which venue hosts the first filmed live show</li><li>How venue deals work: door split, bar minimum, flat rental</li><li>What a typical event nets</li><li>Cost and revenue split for the live series, and who owns the footage</li></ul>
+<textarea data-note="Events" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="first90">
+<div class="num-label">9</div>
+<h2>First 90 days</h2>
+<p class="takeaway">Small tests whose results come back in dollars within weeks.</p>
+<ol>
+<li>R&amp;B &amp; Vibes, Nov 27 at Sidelines: tracking, contact capture, a sponsor ask and filming</li>
+<li>Valentine's cruise test (sails Feb 6), measured in rooms sold per dollar</li>
+<li>Photo room campaign, GVO's highest take-home per hour</li>
+<li>Recording campaign aimed at off-peak hours</li>
+<li>Membership soft launch, offered first to regulars</li>
+<li>Content offer: portfolio page, quote form, outreach to 20 local businesses</li>
+<li>First filmed live show after New Year's</li>
+</ol>
+<h3>The monthly scorecard</h3>
+<p>Money in by line, ad spend, bookings by source, cost per client, members, content deals and contacts added. Every line traces back to a dollar.</p>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Start date</li><li>The three or four numbers that define success at 90 days</li></ul>
+<textarea data-note="First 90 days" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="rules">
+<div class="num-label">10</div>
+<h2>Ground rules worth settling early</h2>
+<p class="takeaway">The things that cause problems later if nobody decides them now.</p>
+<h3>Spending</h3>
+<ul><li>A monthly ad cap that never moves without Cory's OK</li><li>Any ad that costs more to win a client than GVO keeps from that client after two weeks gets paused</li><li>Ad spend is billed to GVO's card directly by Meta and Google, never routed through Siani</li></ul>
+<h3>Ownership and access</h3>
+<ul><li>Ad accounts live in GVO's name. Instagram is already in Cory's Meta business portfolio.</li><li>Siani gets access to run them. Cory and Ashley keep full control.</li><li>All contact lists, content and accounts belong to GVO.</li></ul>
+<h3>Rights and permission</h3>
+<ul><li>Written OK from artists before their tracks, faces or names run in ads</li><li>Photo and video releases for clients and event guests who appear in ads</li><li>Marketing texts and emails only to people who opted in</li></ul>
+<h3>Reputation</h3>
+<ul><li>Every client gets a review request by text after their session. Google reviews feed search results.</li></ul>
+<h3>Kept separate</h3>
+<ul><li>No Deadbeats Club stays apart from GVO revenue. If it ever becomes a client, that's its own agreement.</li><li>Travel is tracked but doesn't count toward the floor until the margin is known.</li></ul>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Monthly ad cap</li><li>Release forms: use existing ones or create new</li><li>Whether No Deadbeats Club fits anywhere, and how Cory wants it handled</li></ul>
+<textarea data-note="Ground rules" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="partner">
+<div class="num-label">11</div>
+<h2>Partnership structure</h2>
+<p class="takeaway">Three separate deals keep each side's value clear.</p>
+<div class="tablewrap"><table>
+<tr><th>Deal</th><th>Between</th><th>How it's paid</th></tr>
+<tr><td>GVO growth system</td><td>GVO and Siani Creates</td><td>Build fee for setup, then a monthly base plus a performance share</td></tr>
+<tr><td>OTD sessions at GVO</td><td>GVO and Off The Dock</td><td>Barter: growth work traded for production time with GVO's video team and room, each hour valued in writing</td></tr>
+<tr><td>OTD Live x GVO Live</td><td>GVO and Off The Dock</td><td>Joint venture. Costs and revenue split by contribution, and the bigger investor headlines.</td></tr>
+</table></div>
+<h3>Agreement basics</h3>
+<ul>
+<li>Start as a 90-day pilot, then renew on results</li>
+<li>Either side can end it with 30 days' notice</li>
+<li>If it ends, GVO keeps every account, list, page and asset built for it</li>
+<li>Siani Creates keeps the right to reuse its framework: playbooks, templates and dashboard structure</li>
+<li>Bartered hours valued in dollars in writing. Barter can count as taxable income, so both sides should check with an accountant.</li>
+</ul>
+<div class="decide"><div class="k">Decide today</div>
+<ul><li>Base plus performance, with barter for OTD production</li><li>Dollar value of a bartered production hour</li><li>Pilot start date and when the agreement gets signed</li></ul>
+<textarea data-note="Partnership" placeholder="Notes from the meeting"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="shipping">
+<div class="num-label">12</div>
+<h2>Shipping</h2>
+<p class="takeaway">Square already handles it. The decisions are how to price it and who packs.</p>
+<p>Square supports flat rates, live carrier rates and free shipping above an order total, and labels print straight from the Square Dashboard. Square is moving shipping settings from Square Online into the main Dashboard, so they may show up in a new place.</p>
+<h3>Working recommendation</h3>
+<ul>
+<li>One flat rate on most orders, so nobody gets surprised at checkout</li>
+<li>Free shipping just above the typical order total, so buyers add one more piece</li>
+<li>Free local pickup at 109 Gibralter Ave</li>
+<li>Labels printed from Square, so tracking reaches the customer automatically</li>
+</ul>
+<div class="decide"><div class="k">Cory's shipping questions</div>
+<ul><li>Who packs and ships, and how fast after an order?</li><li>Typical package sizes: tees, hoodies, jackets, sets</li><li>Domestic only, or international too?</li><li>Average order total, to set the free-shipping line</li></ul>
+<textarea data-note="Shipping" placeholder="Cory's questions and answers"></textarea><div class="saved"></div></div>
+</section>
+
+<section id="next">
+<div class="num-label">13</div>
+<h2>Next steps</h2>
+<ul class="timeline">
+<li><b>This week</b><span>Agree terms. Cory sends revenue by line, costs and the event calendar.</span></li>
+<li><b>By Nov 24</b><span>Tracking and contact capture set up for R&amp;B &amp; Vibes.</span></li>
+<li><b>Nov 27</b><span>R&amp;B &amp; Vibes at Sidelines. First test.</span></li>
+<li><b>December</b><span>Build begins. Cruise ad test starts. Agreement signed.</span></li>
+<li><b>January</b><span>Memberships soft launch. Content packages and portfolio page live. First filmed live show.</span></li>
+<li><b>Early February</b><span>First full monthly scorecard. Cruise sails Feb 6.</span></li>
+<li><b>Early March</b><span>90-day review. Decide what scales, changes or stops.</span></li>
+</ul>
+</section>
+
+<section id="notes">
+<div class="num-label">14</div>
+<h2>Meeting notes</h2>
+<p class="takeaway">Everything typed in the boxes above, in one place.</p>
+<textarea data-note="Other" placeholder="Anything else that came up"></textarea><div class="saved"></div>
+<div class="btns" style="margin-top:16px"><button class="primary" id="copyall">Copy all notes</button><button id="refresh">Refresh summary</button></div>
+<textarea id="allnotes" readonly></textarea>
+<p class="small muted">Notes save in this browser only. Copy them out before closing the page to keep them.</p>
+</section>
+</div>
+
+<footer><div class="wrap">Prepared for GVO Sound by Siani Creates. Working draft, Nov 12, 2026.</div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const n=id=>parseFloat($(id).value)||0;
+const usd=v=>(v<0?'−$':'$')+Math.round(Math.abs(v)).toLocaleString('en-US');
+function goal(){const gap=Math.max(0,n('g_floor')-n('g_now'));$('g_gap').textContent=usd(gap);$('g_sess').textContent=Math.ceil(gap/80);$('g_photo').textContent=Math.ceil(gap/50);}
+function ads(){const b=n('a_budget'),cpc=n('a_cpc'),cv=n('a_conv')/100,k=n('a_keep'),r=n('a_repeat');
+const clicks=cpc>0?b/cpc:0,clients=clicks*cv,cpa=clients>0?b/clients:0,first=clients*k,total=clients*k*r,roi=b>0?total/b:0;
+$('a_clicks').textContent=Math.round(clicks).toLocaleString();$('a_clients').textContent=clients.toFixed(1);
+$('a_cpa').textContent=usd(cpa);$('a_first').textContent=usd(first);$('a_total').textContent=usd(total);
+const e=$('a_roi');e.textContent='$'+roi.toFixed(2);e.className='v '+(roi>=1?'good':'bad');
+let msg;if(b===0)msg='Enter a budget to see the math.';else if(first>=b)msg='The first booking alone pays back the spend. Repeat visits are profit.';else if(total>=b)msg='First bookings don\'t cover the spend, but repeat visits do. Keeping clients coming back makes this work.';else msg='At these numbers the spend doesn\'t pay back. Change the ad, the audience or the offer before adding budget.';
+$('a_verdict').textContent=msg;}
+const presets={slow:{m_sess:15,m_photo:10,m_mem:0,m_cont:0,m_app:300,m_evt:300},steady:{m_sess:25,m_photo:20,m_mem:8,m_cont:1,m_app:500,m_evt:600},strong:{m_sess:35,m_photo:30,m_mem:15,m_cont:2,m_app:800,m_evt:1000}};
+function month(){const keep=n('m_sess')*n('m_sesskeep')+n('m_photo')*50+n('m_mem')*n('m_memkeep')+n('m_cont')*n('m_contkeep')+n('m_app')+n('m_evt');
+const after=keep-n('m_ads'),vs=after-n('m_floor');$('m_keep').textContent=usd(keep);$('m_after').textContent=usd(after);
+const e=$('m_vs');e.textContent=(vs>=0?'+':'')+usd(vs);e.className='v '+(vs>=0?'good':'bad');
+const pct=n('m_floor')>0?Math.max(0,after/n('m_floor')*100):0;$('m_bar').style.width=Math.min(100,pct)+'%';
+$('m_pct').textContent=Math.round(pct)+'% of the monthly floor covered after ad spend.';}
+function invest(){const ad=n('i_ad1')*3+n('i_ad2')*3,fee=n('i_build')*3+n('i_base')*3,perf=n('i_new')*n('i_perf')/100;
+$('i_adtot').textContent=usd(ad);$('i_feetot').textContent=usd(fee);$('i_all').textContent=usd(ad+fee);$('i_perfamt').textContent=usd(perf)+'/mo';}
+function all(){goal();ads();month();invest();}
+document.querySelectorAll('.btns button[data-p]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.btns button[data-p]').forEach(x=>x.classList.remove('on'));btn.classList.add('on');const p=presets[btn.dataset.p];for(const k in p)$(k).value=p[k];month();}));
+document.querySelectorAll('input[type=number]').forEach(i=>i.addEventListener('input',all));
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v);return true}catch(e){return false}}};
+const notes=[...document.querySelectorAll('textarea[data-note]')];
+function summary(){$('allnotes').value=notes.filter(t=>t.value.trim()).map(t=>t.dataset.note.toUpperCase()+'\n'+t.value.trim()).join('\n\n')||'No notes yet.';}
+notes.forEach(t=>{const key='gvo-note-'+t.dataset.note;const v=store.get(key);if(v)t.value=v;
+t.addEventListener('input',()=>{const ok=store.set(key,t.value);const s=t.nextElementSibling;if(s)s.textContent=ok?'Saved in this browser':'Not saved. Copy notes before closing.';summary();});});
+$('refresh').addEventListener('click',summary);
+$('copyall').addEventListener('click',async()=>{summary();const b=$('copyall');try{await navigator.clipboard.writeText($('allnotes').value);b.textContent='Copied';}catch(e){$('allnotes').select();b.textContent='Select and copy the box below';}setTimeout(()=>b.textContent='Copy all notes',2500);});
+all();summary();
+</script>
+</body>
+</html>
